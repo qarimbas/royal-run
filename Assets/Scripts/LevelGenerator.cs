@@ -6,25 +6,57 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] int startingChunksAmount = 12;
     [SerializeField] Transform chunkParent;
     [SerializeField] float chunkLength = 10f;
+    [SerializeField] float moveSpeed = 8f;
+
+    GameObject[] chunks = new GameObject[12];
 
 
     void Start()
     {
+        SpawnChunks();
+    }
+
+    private void Update()
+    {
+        MoveChunks();
+    }
+
+    void SpawnChunks()
+    {
         for (int i = 0; i < startingChunksAmount; i++)
         {
-            float spawnPositionZ;
-
-            if (i == 0)
-            {
-                spawnPositionZ = transform.position.z;
-            }
-            else
-            {
-                spawnPositionZ = transform.position.z + (chunkLength * i);
-            }
+            float spawnPositionZ = CalculateSpawnPositionZ(i);
 
             Vector3 chunkSpawnPos = new Vector3(transform.position.x, transform.position.y, spawnPositionZ);
-            Instantiate(chunkPrefab, chunkSpawnPos, Quaternion.identity, chunkParent);
+            GameObject newChunk = Instantiate(chunkPrefab, chunkSpawnPos, Quaternion.identity, chunkParent);
+            chunks[i] = newChunk;
+        }
+    }
+
+    float CalculateSpawnPositionZ(int i)
+    {
+        float spawnPositionZ;
+
+        if (i == 0)
+        {
+            spawnPositionZ = transform.position.z;
+        }
+        else
+        {
+            spawnPositionZ = transform.position.z + (chunkLength * i);
+        }
+
+        return spawnPositionZ;
+    }
+
+    void MoveChunks()
+    {
+        for(int i = 0; i < chunks.Length; i++)
+        {
+            if (chunks[i] != null)
+            {
+                chunks[i].transform.Translate(-transform.forward * (moveSpeed * Time.deltaTime));
+            }
         }
     }
 }
