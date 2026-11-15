@@ -668,6 +668,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &959879331 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1014860696115371117, guid: dcbc89efbe5bd174b99e07c76bd0b6bf, type: 3}
+  m_PrefabInstance: {fileID: 1597350241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1550342298
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31949d35adef7194ba6d273007b83034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionHandler
+  animator: {fileID: 959879331}
 --- !u!136 &1550342304
 CapsuleCollider:
   m_ObjectHideFlags: 0
