@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8612587621882129001}
   - component: {fileID: 2065688742755650274}
-  - component: {fileID: 3209544324588541880}
+  - component: {fileID: 4136407126791774672}
   m_Layer: 0
   m_Name: Apple Pickup
   m_TagString: Untagged
@@ -89,7 +89,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &3209544324588541880
+--- !u!114 &4136407126791774672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3230779785665540184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b2fc9e38bb1f941ab28eb356becd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e710c1bcbaf58c4284f77a8c6f53326, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickup
+  m_EditorClassIdentifier: Assembly-CSharp::Apple
 --- !u!1001 &9201628884417307364
 PrefabInstance:
   m_ObjectHideFlags: 0
